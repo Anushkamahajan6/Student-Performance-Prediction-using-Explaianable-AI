@@ -2,6 +2,8 @@ import streamlit as st
 import pickle
 import pandas as pd
 import shap
+import os
+import gdown
 
 # ================================
 # 🔥 CONFIG
