@@ -7,11 +7,17 @@ import shap
 # 🔥 CONFIG
 # ================================
 st.set_page_config(page_title="Student AI", layout="wide")
+if not os.path.exists("model.pkl"):
+    file_id = "1U0KJbjJoG-kOJBwVnSMB_Jpj31Juiiwi"
+    url = f"https://drive.google.com/uc?id={file_id}"
+    gdown.download(url, "model.pkl", quiet=False)
 
+# Load model
+with open("model.pkl", "rb") as f:
+    model = pickle.load(f)
 # ================================
 # 🎯 LOAD MODEL
 # ================================
-model = pickle.load(open("model.pkl", "rb"))
 
 # ================================
 # 🎨 HEADER
